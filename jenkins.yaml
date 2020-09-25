@@ -21,21 +21,23 @@ unclassified:
           scm:
             github:
               credentialsId: "cloudbees-ci-workshop-github-app"
-              repoOwner: "REPLACE_GITHUB_ORG"
+              repoOwner: "workshop-ci-devops2020"
               repository: "pipeline-library"
+groovy:
+  - url: https://raw.githubusercontent.com/workshop-ci-devops2020/cloudbees-ci-config-bundle/master/create-pipeline-template-job.groovy
 credentials:
   system:
     domainCredentials:
     - credentials:
       - string:
-          description: "Webhook secret for CloudBees CI Workshop GitHub App"
+          description: "Webhook secret for CloudBees Feature Flags Workshop GitHub App"
           id: "cloudbees-ci-workshop-github-webhook-secret"
           scope: SYSTEM
           secret: "${gitHubWebhookSecret}"
       - gitHubApp:
           apiUri: "https://api.github.com"
-          appID: "77562"
-          description: "CloudBees CI Workshop GitHub App credential"
+          appID: "79627"
+          description: "CloudBees Feature Flags Workshop GitHub App credential"
           id: "cloudbees-ci-workshop-github-app"
-          owner: "REPLACE_GITHUB_ORG"
-          privateKey: "${gitHubAppPrivateKey}"
+          owner: "workshop-ci-devops2020"
+          privateKey: "${featureFlagWorkshopGitHubAppPrivateKey}"
